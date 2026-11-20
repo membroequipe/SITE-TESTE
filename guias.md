@@ -19,7 +19,7 @@ permalink: /guias/
 
     <h2 id="artigos-guias" style="margin-top: 2rem;">Todos os Guias e Dicas Práticas</h2>
     
-    {% assign guias_posts = site.posts | where_exp: "post", "post.category == 'guias' or post.categories contains 'guias'" %}
+    {% assign guias_posts = "" | split: "" %} {% for post in site.posts %}   {% if post.category == 'guias' or post.category == 'Guias' or post.categories contains 'guias' or post.categories contains 'Guias' %}     {% assign guias_posts = guias_posts | push: post %}   {% endif %} {% endfor %}
     
     <div class="reviews-grid" style="margin-top: 1.5rem;">
       {% if guias_posts.size > 0 %}
