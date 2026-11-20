@@ -1,0 +1,59 @@
+---
+layout: default
+title: "Guias Comparativos e Melhores Opções"
+description: "Compare furadeiras e parafusadeiras de diferentes marcas. Descubra as diferenças, vantagens e qual modelo atende melhor ao seu trabalho."
+permalink: "/comparativos/"
+---
+
+<style>
+  /* Ajuste do título no Mobile para seguir o mesmo padrão dos outros hubs */
+  @media (max-width: 768px) {
+    .page-header h1, 
+    .category-container h1,
+    h1 {
+      font-size: 1.6rem !important;
+      line-height: 1.25 !important;
+    }
+  }
+</style>
+
+<div class="site-content">
+  <div class="post-content">
+
+    <h1>Guias Comparativos e Melhores Opções</h1>
+    <p>Confira nossos guias completos e comparações lado a lado para encontrar o produto ideal para o seu perfil e orçamento.</p>
+
+    <!-- VITRINE DINÂMICA DE COMPARATIVOS -->
+    <h2 id="artigos-relacionados" style="margin-top: 2rem;">Todos os Comparativos</h2>
+    <p>Explore nossas análises detalhadas lado a lado:</p>
+    
+    <div class="reviews-grid" style="margin-top: 1.5rem;">
+      {% assign comparativos_posts = site.posts | where_exp: "post", "post.category == 'comparativos' or post.category == 'Comparativos' or post.categories contains 'comparativos' or post.categories contains 'Comparativos'" %}
+      
+      {% if comparativos_posts.size > 0 %}
+        {% for post in comparativos_posts %}
+          <article class="review-card" style="border: 1px solid var(--border-color, #e2e8f0); border-radius: 12px; overflow: hidden; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: transform 0.2s ease;">
+            <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: inherit; display: block;">
+              
+              {% if post.image and post.image != "" %}
+                <div class="review-card-img" style="width: 100%; height: 160px; overflow: hidden; background: #f8fafc;">
+                  <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+              {% endif %}
+
+              <div class="review-content" style="padding: 16px;">
+                <span class="review-badge" style="font-size: 0.72rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.5px;">Comparativo</span>
+                <h3 class="review-card-title" style="font-size: 1.05rem; margin: 6px 0 0 0; color: #0f172a; line-height: 1.35; font-weight: 700;">{{ post.title }}</h3>
+                <div class="review-date" style="font-size: 0.78rem; color: #94a3b8; margin-top: 10px;">Por {{ post.author | default: "Equipe de Análises" }} • {{ post.date | date: "%d/%m/%Y" }}</div>
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+      {% else %}
+        <p style="grid-column: 1 / -1; color: #64748b; text-align: center; padding: 30px 0;">Em breve novos comparativos publicados.</p>
+      {% endif %}
+      
+    </div>
+
+  </div>
+</div>
