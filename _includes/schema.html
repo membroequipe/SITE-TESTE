@@ -1,0 +1,81 @@
+{% if page.layout == "post" or page.layout == "review" %}
+{% if page.avaliacao %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ page.modelo | default: page.title | escape }}",
+  "image": "{{ page.image | absolute_url }}",
+  "description": "{{ page.description | escape }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ page.marca | default: 'Genérica' | escape }}"
+  },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ page.avaliacao.nota | divided_by: 2.0 }}",
+        "bestRating": "5"
+      },
+    "author": {
+      "@type": "Organization",
+      "name": "{{ page.author | default: 'Equipe de Análises' | escape }}"
+    },
+    "datePublished": "{{ page.date | date_to_xmlschema }}"
+  }
+}
+</script>
+{% endif %}
+
+<!-- BreadcrumbList Automático -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Início",
+    "item": "{{ '/' | absolute_url }}"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "{{ page.categories[0] | capitalize | escape }}",
+    "item": "{{ '/' | append: page.categories[0] | append: '/' | absolute_url }}"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "{{ page.title | escape }}"
+  }]
+}
+</script>
+{% endif %}
+
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ '/' | absolute_url }}#website",
+      "url": "{{ '/' | absolute_url }}",
+      "name": "Sua Melhor Ferramenta",
+      "description": "Guias de escolha, comparativos e reviews técnicos de furadeiras e parafusadeiras.",
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "Organization",
+      "@id": "{{ '/' | absolute_url }}#organization",
+      "name": "Sua Melhor Ferramenta",
+      "url": "{{ '/' | absolute_url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/images/logo.png' | absolute_url }}" 
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
