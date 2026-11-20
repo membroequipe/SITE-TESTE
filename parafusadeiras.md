@@ -4,7 +4,7 @@ title: "Parafusadeiras: Reviews, Comparativos e Guia de Compra"
 description: "Encontre reviews de parafusadeiras, compare modelos de Makita, Bosch, DeWalt e outras marcas e escolha a ferramenta ideal para seu trabalho."
 permalink: /parafusadeiras/
 ---
-
+ 
 <style>
   /* Ajuste cirúrgico do título no Mobile para esta página */
   @media (max-width: 768px) {
