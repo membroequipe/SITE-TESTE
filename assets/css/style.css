@@ -1101,9 +1101,13 @@ details.toc-box[open] > summary::after {
     align-items: center;
     gap: 36px;
     padding: clamp(24px, 4vw, 48px);
-    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    
+    /* Nome da imagem que você subiu no GitHub */
+    background-image: url('{{ "/assets/images/fundo-tech.jpg" | relative_url }}');
     background-size: cover;
-    background-position: center;
+    background-position: center right; /* Foca a furadeira na direita */
+    background-repeat: no-repeat;
+    
     border-radius: 16px 16px 0 0;     
     overflow: hidden; 
     position: relative; 
