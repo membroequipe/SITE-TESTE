@@ -3065,64 +3065,71 @@ table.specs-table tbody th:first-child {
 }
 
 /* =========================================
-   AJUSTES PARA A NOVA IMAGEM (HOME)
+   AJUSTES FINAIS PARA A NOVA IMAGEM (HOME)
    ========================================= */
 
-/* 1. Deixa o texto branco para contrastar com a imagem */
+/* Deixa o container interno transparente para a imagem aparecer */
+.pc-home .pc-hero-main {
+    background: transparent !important; 
+}
+
+/* Texto ESCURO no Desktop (para contrastar com o lado esquerdo claro da imagem) */
 .pc-home .pc-hero h1 {
-    color: #ffffff !important;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    color: #0f172a !important; 
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9); /* Sombra branca forte para dar leitura */
 }
 
-/* 2. Mantém a parte forte do título em amarelo */
 .pc-home .pc-hero h1 strong {
-    color: #ffd700 !important;
+    color: #b45309 !important; /* Laranja queimado/Dourado escuro para o destaque */
 }
 
-/* 3. Parágrafos em cinza claro */
 .pc-home .pc-lead {
-    color: #e2e8f0 !important;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    color: #1e293b !important; /* Cinza muito escuro */
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.9);
 }
 
-/* 4. Categoria no topo em amarelo */
 .pc-home .pc-eyebrow {
-    color: #fcd34d !important;
+    color: #b45309 !important;
 }
 
-/* 5. Efeito de vidro na caixa escura (pc-feature) */
+/* Caixa da direita em "Glassmorphism" (Vidro escuro semi-transparente) */
 .pc-home .pc-feature {
-    background: rgba(15, 23, 42, 0.75) !important; /* Preto transparente */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.85) !important; 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* 6. Botões amarelos um pouco mais vivos */
-.pc-home .pc-action-primary {
-    background-color: #ffd700 !important;
-    color: #0f172a !important;
-    border: none !important;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3) !important;
-}
-
-.pc-home .pc-action-primary:hover {
-    background-color: #ffea00 !important;
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5) !important;
-}
-
-/* 7. Ajuste da barra de critérios editoriais embaixo */
-.pc-home .pc-trust {
-    background: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(5px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Ajuste Mobile: Remove a imagem de fundo no celular para não poluir */
+/* =========================================
+   MOBILE (Telas menores)
+   ========================================= */
 @media (max-width: 960px) {
     .pc-hero {
         background-image: none !important;
-        background-color: var(--primary) !important; /* Fundo escuro no mobile */
+        background-color: #0f172a !important; /* Fundo escuro no celular */
+    }
+    
+    /* No celular, o texto tem que ficar BRANCO porque o fundo é escuro */
+    .pc-home .pc-hero h1 {
+        color: #ffffff !important;
+        text-shadow: none;
+    }
+    
+    .pc-home .pc-hero h1 strong {
+        color: #ffd700 !important; /* Amarelo brilhante */
+    }
+    
+    .pc-home .pc-lead {
+        color: #cbd5e1 !important;
+        text-shadow: none;
+    }
+    
+    .pc-home .pc-eyebrow {
+        color: #fcd34d !important;
+    }
+    
+    .pc-home .pc-feature {
+        background: rgba(255, 255, 255, 0.05) !important; /* Ajuste do vidro no fundo escuro */
     }
 }
