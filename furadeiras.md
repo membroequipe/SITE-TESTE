@@ -28,7 +28,7 @@ permalink: /furadeiras/
     <p>Confira nossos artigos detalhados para comparar marcas e encontrar o modelo ideal para o seu orçamento:</p>
     
     <div class="reviews-grid" style="margin-top: 1.5rem;">
-      {% assign furadeiras_posts = site.posts | where_exp: "post", "post.category == 'furadeiras' or post.categories contains 'furadeiras'" | uniq %}
+      {% assign furadeiras_posts = "" | split: "" %} {% for post in site.posts %}   {% if post.category == 'furadeiras' or post.category == 'Furadeiras' or post.categories contains 'furadeiras' or post.categories contains 'Furadeiras' %}     {% assign furadeiras_posts = furadeiras_posts | push: post %}   {% endif %} {% endfor %}
       
       {% if furadeiras_posts.size > 0 %}
         {% for post in furadeiras_posts %}
