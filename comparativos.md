@@ -22,7 +22,7 @@ permalink: "/comparativos/"
 
     <h1>Guias Comparativos e Melhores Opções</h1>
     <p>Confira nossos guias completos e comparações lado a lado para encontrar o produto ideal para o seu perfil e orçamento.</p>
-
+ 
     <!-- VITRINE DINÂMICA DE COMPARATIVOS -->
     <h2 id="artigos-relacionados" style="margin-top: 2rem;">Todos os Comparativos</h2>
     <p>Explore nossas análises detalhadas lado a lado:</p>
