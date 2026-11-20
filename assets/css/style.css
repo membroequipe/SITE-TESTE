@@ -1103,7 +1103,7 @@ details.toc-box[open] > summary::after {
     padding: clamp(24px, 4vw, 48px);
     
     /* Nome da imagem que você subiu no GitHub */
-    background-image: url('{{ "/assets/images/fundo-tech.jpg" | relative_url }}');
+    background-image: url('{{ "/assets/images/fundo-tech.webp" | relative_url }}');
     background-size: cover;
     background-position: center right; /* Foca a furadeira na direita */
     background-repeat: no-repeat;
