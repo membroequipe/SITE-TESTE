@@ -1102,10 +1102,9 @@ details.toc-box[open] > summary::after {
     gap: 36px;
     padding: clamp(24px, 4vw, 48px);
     
-    /* Nome da imagem que você subiu no GitHub */
-    background-image: url('/SITE-TESTE/assets/images/fundo-tech.jpg');
+    /* REMOVA AS LINHAS DA IMAGEM DAQUI */
     background-size: cover;
-    background-position: center right; /* Foca a furadeira na direita */
+    background-position: center right;
     background-repeat: no-repeat;
     
     border-radius: 16px 16px 0 0;     
